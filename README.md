@@ -1,4 +1,4 @@
-### Hi there 👋
+### This repository contains code for the Object-centric Relational Abstraction (OCRA) model.
 
 <!--
 **ocraneurips/ocraneurips** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
