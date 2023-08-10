@@ -15,7 +15,13 @@
 
 The pretrained slot attention model for the ART dataset is given under `weights/slot_attention_autoencoder_6slots_clevrdecoder_morewarmup_lowerlr_nolrdecay_64dim_128res_random_spatial_heldout_unicodes_resizedcropped_continuetraining_run_1_best.pth.tar`
 
-To train on same different task with $m=95$ run 'python' 
+To train on Same/different task with $m=95$ run `python train_ocra_sd.py --batch_size 16  --img_size 128 --num_epochs 600 --m_holdout 95 --run '1'` 
+
+To train on Relational match-to-sample task with $m=95$ run `python train_ocra_rmts.py --batch_size 16  --img_size 128 --num_epochs 400 --m_holdout 95 --run '1'` 
+
+To train on Distribution-of-3 task with $m=95$ run `python train_ocra_dist3.py --batch_size 16  --img_size 128 --num_epochs 400 --m_holdout 95 --run '1'` 
+
+To train on Identity rules task with $m=95$ run `python train_ocra_dist3.py --batch_size 16  --img_size 128 --num_epochs 100 --m_holdout 95 --run '1' --task 'identity_rules' --test_gen_method 'subsample'` 
 
 ### SVRT
 ### CLEVR-ART
