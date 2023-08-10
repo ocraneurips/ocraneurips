@@ -29,7 +29,16 @@ The pretrained slot attention model for the SVRT dataset using 500 samples for e
 
 The pretrained slot attention model for the SVRT dataset using 1000 samples for each task is given under `weights/slot_attention_autoencoder_augmentations_6slots_clevrdecoder_morewarmup_lowerlr_nolrdecay_64dim_128res_grayscale_svrt_alltasks_num_images_500_run_1_more_more_continuetraining_best.pth.tar`
 
-Download the SVRT dataset using (https://fleuret.org/cgi-bin/gitweb/gitweb.cgi?p=pysvrt.git;a=summary)
+Generate the SVRT dataset using https://fleuret.org/cgi-bin/gitweb/gitweb.cgi?p=pysvrt.git;a=summary 
+
+Put the images for each of the tasks under 'svrt/' in a folder named `results_problem_1` for task 1 and so on.
+
+
+Create `train_img_files_allclasses.npy` by randomly sampling 10000 images for each task with equal number of images for each class. Each entry of `train_img_files_allclasses.npy` should refer to the path of an image but formatted like `/////svrt/results_problem_1/sample_0_4102.png` 
+
+Similarly create `val_img_files_allclasses.npy` by randomly sampling a different set of 4000 images for each task, `test_img_files_allclasses.npy` by randomly sampling a different set of 40000 images for each task. 
+
+
 
 ### CLEVR-ART
 
