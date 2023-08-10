@@ -24,6 +24,13 @@ To train on Distribution-of-3 task with $m=95$ run `python train_ocra_dist3.py -
 To train on Identity rules task with $m=95$ run `python train_ocra_dist3.py --batch_size 16  --img_size 128 --num_epochs 100 --m_holdout 95 --run '1' --task 'identity_rules' --test_gen_method 'subsample'` 
 
 ### SVRT
+
+The pretrained slot attention model for the SVRT dataset using 500 samples for each task is given under `weights/slot_attention_autoencoder_augmentations_6slots_clevrdecoder_morewarmup_lowerlr_nolrdecay_64dim_128res_grayscale_svrt_alltasks_num_images_250_run_1_more_x3_continuetraining_best.pth.tar`
+
+The pretrained slot attention model for the SVRT dataset using 1000 samples for each task is given under `weights/slot_attention_autoencoder_augmentations_6slots_clevrdecoder_morewarmup_lowerlr_nolrdecay_64dim_128res_grayscale_svrt_alltasks_num_images_500_run_1_more_more_continuetraining_best.pth.tar`
+
+Download the SVRT dataset using (https://fleuret.org/cgi-bin/gitweb/gitweb.cgi?p=pysvrt.git;a=summary)
+
 ### CLEVR-ART
 
 <!--
