@@ -38,9 +38,25 @@ Create `train_img_files_allclasses.npy` by randomly sampling 10000 images for ea
 
 Similarly create `val_img_files_allclasses.npy` by randomly sampling a different set of 4000 images for each task, `test_img_files_allclasses.npy` by randomly sampling a different set of 40000 images for each task. 
 
-
+To run on task 1 with 500 training samples run `python train_ocra_svrt.py --batch_size 32  --img_size 128  --configuration 'results_problem_1' --run '1'`
 
 ### CLEVR-ART
+
+The pretrained slot attention model for the CLEVR-ART dataset is given under `weights/slot_attention_autoencoder_7slots_clevrdecoder_morewarmup_lowerlr_nolrdecay_64dim_128res_cv2_rgbcolororder_random_spatial_clevrshapes_continuetraining_run_1_best.pth.tar`
+
+To generate CLEVR-ART dataset, you need to install Blender by following the instructions from https://github.com/facebookresearch/clevr-dataset-gen
+
+Create directory `output/rmts_images/train_ood` and run `render_images_rmts.py` to generate the CLEVR-ART images for the Relational match-to-sample task.
+Create directory `output/rmts_images/test_ood` and run `render_images_rmts.py` to generate the CLEVR-ART images for the Relational match-to-sample task. On line 161 change to `prob_answer_arr = np.load("RMTS_ood_test.npz")`.
+
+Create directory `output/idrules_images/train_ood` and run `render_images_idrules.py` to generate the CLEVR-ART images for the Identity rules task.
+Create directory `output/idrules_images/test_ood` and run `render_images_idrules.py` to generate the CLEVR-ART images for the Identity rules task. On line 161 change to `prob_answer_arr = np.load("identity_rules_ood_train.npz")`.
+
+To train on Relational match-to-sample task run `python train_ocra_clevr_rmts.py  --img_size 128 --run '1'`
+
+To train on Identity rules task run `python train_ocra_clevr_idrules.py  --img_size 128 --run '1'`
+
+
 
 <!--
 **ocraneurips/ocraneurips** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
