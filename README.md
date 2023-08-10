@@ -9,9 +9,14 @@
 * PIL==8.4.0
 * numpy==1.20.3
 * einops==0.4.1
-* 
+
 
 ### ART
+
+The pretrained slot attention model for the ART dataset is given under `weights/slot_attention_autoencoder_6slots_clevrdecoder_morewarmup_lowerlr_nolrdecay_64dim_128res_random_spatial_heldout_unicodes_resizedcropped_continuetraining_run_1_best.pth.tar`
+
+To train on same different task with $m=95$ run 'python' 
+
 ### SVRT
 ### CLEVR-ART
 
