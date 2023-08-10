@@ -1,5 +1,20 @@
 ### This repository contains code for the Object-centric Relational Abstraction (OCRA) model.
 
+## Requirements
+* python 3.9.7
+* NVIDIA GPU with CUDA 11.0+ capability
+* torch==1.11.0
+* torchvision==0.12.0
+* glob
+* PIL==8.4.0
+* numpy==1.20.3
+* einops==0.4.1
+* 
+
+### ART
+### SVRT
+### CLEVR-ART
+
 <!--
 **ocraneurips/ocraneurips** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
