@@ -38,7 +38,12 @@ Create `train_img_files_allclasses.npy` by randomly sampling 10000 images for ea
 
 Similarly create `val_img_files_allclasses.npy` by randomly sampling a different set of 4000 images for each task, `test_img_files_allclasses.npy` by randomly sampling a different set of 40000 images for each task. 
 
-To run on task 1 with 500 training samples run `python train_ocra_svrt.py --batch_size 32  --img_size 128  --configuration 'results_problem_1' --run '1'`
+To run on task 1 with 500 training samples run `python train_ocra_svrt.py --batch_size 32 --learning_rate 4e-5 --num_epochs 2000  --img_size 128  --configuration 'results_problem_1' --run '1'`
+
+To run on tasks with 1000 training samples change line 229 of `train_ocra_svrt.py` to
+`slot_model = load_slot_checkpoint(slot_model,'weights/slot_attention_autoencoder_augmentations_6slots_clevrdecoder_morewarmup_lowerlr_nolrdecay_64dim_128res_grayscale_svrt_alltasks_num_images_500_run_1_more_more_continuetraining_best.pth.tar')`
+
+To train on task 1 run `python train_ocra_svrt.py --batch_size 32 --learning_rate 4e-5 --num_epochs 2000 --n 500  --img_size 128  --configuration 'results_problem_1' --run '1' --model_name 'slot_attention_augmentations_first_more_pretrained_svrt_1000_images_alltasks_frozen_autoencoder_ocra'`
 
 ### CLEVR-ART
 
