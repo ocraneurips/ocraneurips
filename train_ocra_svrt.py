@@ -40,8 +40,8 @@ class SVRTdataset(Dataset):
 
 
 		self.file_names = np.load(os.path.join(root_dir,'{}_img_files_allclasses.npy'.format(dataset_type)))
-		self.file_names_config_sample0 = sorted([f for f in self.file_names if (configuration==f.split('/')[6]) and ('sample_0' in f.split('/')[7][:8])])
-		self.file_names_config_sample1 = sorted([f for f in self.file_names if (configuration==f.split('/')[6]) and ('sample_1' in f.split('/')[7][:8])])
+		self.file_names_config_sample0 = sorted([f for f in self.file_names if (configuration==f.split('/')[1]) and ('sample_0' in f.split('/')[2][:8])])
+		self.file_names_config_sample1 = sorted([f for f in self.file_names if (configuration==f.split('/')[1]) and ('sample_1' in f.split('/')[2][:8])])
 			
 		if dataset_type == 'train':
 			self.train = True
@@ -85,9 +85,9 @@ class SVRTdataset(Dataset):
 
 	def __getitem__(self, idx):
 		# data_path = os.path.join(self.root_dir, self.file_names[idx])
-		file_name = self.file_names_config_sampled[idx][6:]
+		file_name = self.file_names_config_sampled[idx]
 	
-		if 'sample_0' in file_name.split('/')[6]:
+		if 'sample_0' in file_name.split('/')[2]:
 			target = 0
 		else:
 			target = 1
